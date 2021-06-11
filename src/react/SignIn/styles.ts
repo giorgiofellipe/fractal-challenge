@@ -17,7 +17,7 @@ export const Card = styled(MuiCard).attrs({
   raised: true,
   variant: 'outlined',
 })`
-  min-width: 320px;
+  min-width: 280px;
 `
 
 export const CardTitle = styled.p`

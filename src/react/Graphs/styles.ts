@@ -13,4 +13,8 @@ export const ChartsContainer = styled.div`
   flex-direction: row;
   justify-content: space-around;
   padding: 20px 0;
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
