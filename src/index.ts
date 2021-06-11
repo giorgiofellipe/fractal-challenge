@@ -9,7 +9,7 @@ import './style.css';
 
 // angular components
 import AngularComponentsModule from './angular/components';
-import './angular/home';
+import './angular/menu';
 
 // react components
 import ReactFunctionalComponent from './react/ReactFunctionalComponent';

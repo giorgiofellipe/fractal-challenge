@@ -1,0 +1,23 @@
+<section layout="row" flex>
+  <md-sidenav md-component-id="left" md-is-locked-open="true" style="max-width: 200px;">
+    <md-toolbar>
+      <a class="md-toolbar-tools md-accent">
+        <h1>FRACTAL</h1>
+      </a>
+    </md-toolbar>
+    <md-button ng-repeat="(key, value) in menus" ng-click="navigateTo(value.state)" class="md-primary"
+      ng-class="{'active': isStateActive(value.state)}">
+      {{value.name}}
+    </md-button>
+  </md-sidenav>
+  <div layout="column" flex>
+    <md-toolbar layout="row" layout-align="end center">
+      <md-button class="toolbar-button md-accent">{{userName}}</md-button>
+    </md-toolbar>
+    <md-content flex layout-padding>
+      <div style="height: calc(100vh - 65px - 16px); padding: 0;">
+        <div ui-view></div>
+      </div>
+    </md-content>
+  </div>
+</section>
