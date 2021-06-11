@@ -1,4 +1,8 @@
 import angular from 'angular';
+import 'angular-animate';
+import 'angular-aria';
+import 'angular-messages';
+import 'angular-material';
 
 import { UI_ROUTER_REACT_HYBRID } from '@uirouter/react-hybrid';
 import './style.css';
