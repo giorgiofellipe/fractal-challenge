@@ -10,6 +10,7 @@ import './style.css';
 // angular components
 import AngularComponentsModule from './angular/components';
 import './angular/menu';
+import './angular/maps';
 
 // react components
 import SignIn from './react/SignIn';
