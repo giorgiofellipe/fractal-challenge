@@ -14,35 +14,53 @@ import './angular/home';
 // react components
 import ReactFunctionalComponent from './react/ReactFunctionalComponent';
 import SignIn from './react/SignIn';
+import { angularFractalAccentTheme, angularFractalTheme } from './themes';
 
-const ngmod = angular.module('app', [
-  'ui.router', 
+
+angular.module('app', [
+  'ngMaterial',
+  'ui.router',
   UI_ROUTER_REACT_HYBRID,
   AngularComponentsModule.name,
-]);
-ngmod.config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) => {
-  $stateProvider
-    .state({ 
-      name: 'signin', 
-      url: '/', 
-      component: SignIn,
-      resolve: {
-        state: '$state'
-      }
-    })
-    .state({ 
-      name: 'react', 
-      url: '/react', 
-      component: ReactFunctionalComponent
-    })
-    .state({ 
-      name: 'angular', 
-      url: '/angular', 
-      component: 'home'
-    });
+])
+  .config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) => {
+    $stateProvider
+      .state({
+        name: 'signin',
+        url: '/',
+        component: SignIn,
+        resolve: {
+          state: '$state'
+        }
+      })
+      .state({
+        abstract: true,
+        name: 'menu',
+        url: '',
+        component: 'menu',
+      })
+      .state({
+        name: 'menu.maps',
+        url: '/maps',
+        component: 'maps'
+      })
+      .state({
+        name: 'menu.graphs',
+        url: '/graphs',
+        component: Graphs
+      });
 
-  $urlRouterProvider.otherwise("/")
-}]);
+    $urlRouterProvider.otherwise('/');
+  }])
+  .config(($mdThemingProvider) => {
+    $mdThemingProvider.definePalette('fractal', angularFractalTheme);
+
+    $mdThemingProvider.definePalette('fractalaccent', angularFractalAccentTheme);
+
+    $mdThemingProvider.theme('default')
+      .primaryPalette('fractal')
+      .accentPalette('fractalaccent');
+  })
 
 const root = document.getElementById('root');
 angular.bootstrap(root, ['app']);
