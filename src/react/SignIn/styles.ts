@@ -9,7 +9,11 @@ export const Container = styled.div`
   align-items: center;
 `;
 
-export const Card = styled(MuiCard).attrs({ 
+export const TitleContainer = styled.div`
+  margin: 20px 0;
+`;
+
+export const Card = styled(MuiCard).attrs({
   raised: true,
   variant: 'outlined',
 })`

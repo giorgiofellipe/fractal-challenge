@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from 'react';
-import { Button, CardContent, CardHeader, ThemeProvider } from '@material-ui/core';
+import { Button, CardContent, CardHeader, ThemeProvider, Typography } from '@material-ui/core';
 
 import { StateService } from '@uirouter/core';
-import { Container, Card, CardTitle, CardActions, TextField } from './styles';
+import { Container, Card, CardTitle, CardActions, TextField, TitleContainer } from './styles';
 import api from '../../services/api';
 import { reactFractalTheme } from '../../themes';
 
@@ -28,6 +28,9 @@ function SignIn({ state }: { state: StateService }) {
   return (
     <ThemeProvider theme={reactFractalTheme}>
       <Container>
+        <TitleContainer>
+          <Typography variant="h3" color="secondary">FRACTAL</Typography>
+        </TitleContainer>
         <Card>
           <CardContent>
             <CardHeader title={<CardTitle>Login</CardTitle>} />
