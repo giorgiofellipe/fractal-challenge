@@ -12,7 +12,6 @@ import AngularComponentsModule from './angular/components';
 import './angular/menu';
 
 // react components
-import ReactFunctionalComponent from './react/ReactFunctionalComponent';
 import SignIn from './react/SignIn';
 import { angularFractalAccentTheme, angularFractalTheme } from './themes';
 
