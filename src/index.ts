@@ -14,6 +14,7 @@ import './angular/maps';
 
 // react components
 import SignIn from './react/SignIn';
+import Graphs from './react/Graphs';
 import { angularFractalAccentTheme, angularFractalTheme } from './themes';
 
 
