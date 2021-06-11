@@ -2,7 +2,7 @@ import angular from 'angular';
 
 import html from './menu.html'
 
-function HomeComponentController($scope, $state, $mdSidenav) {
+function HomeComponentController($scope, $state, $mdSidenav, $mdMedia) {
   $scope.userName = null;
 
   (function init() {
@@ -47,7 +47,7 @@ function HomeComponentController($scope, $state, $mdSidenav) {
     }
   })();
 
-  $scope.toggleLeft = () => {
+  $scope.toggleMenu = () => {
     $mdSidenav('left').toggle();
   };
 
@@ -57,9 +57,14 @@ function HomeComponentController($scope, $state, $mdSidenav) {
 
   $scope.navigateTo = (state: string) => {
     $state.go(`menu.${state}`);
+    if (!$mdMedia('gt-md') && $mdSidenav('left').isOpen()) {
+      $scope.close();
+    }
   };
 
   $scope.isStateActive = (state: string) => $state.current.name === `menu.${state}`;
+
+  $scope.shouldHideMenu = () => $mdMedia('gt-md');
 }
 
 const MenuComponent = angular.module('app.components')

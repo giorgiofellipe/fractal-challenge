@@ -42,6 +42,21 @@ button {
   cursor: pointer;
 }
 
+md-sidenav {
+  max-width: 200px !important; 
+  z-index: 9999;
+}
+
+.menu-item {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.custom-hide {
+  visibility: hidden !important;
+}
+
 .container {
   width: 100%;
   display: flex;
